@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Laboratorio0.Helpers
 {
@@ -16,6 +13,6 @@ namespace Laboratorio0.Helpers
 				return _instance;
 			}
 		}
-		public Stack<string> PilaPelicula = new Stack<string>();
+		public Stack<Pelicula> PilaPelicula = new Stack<Pelicula>();
 	}
 }
