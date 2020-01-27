@@ -8,14 +8,29 @@ using Laboratorio0.Helpers;
 namespace Laboratorio0.Controllers
 {
 	[ApiController]
-	[Route("[api/controller]")]
+	[Route("[controller]")]
     public class PeliculaController : ControllerBase
     {
        [HttpGet]
 	   [Route("{id?}")]
-	   public IEnumerable<Pelicula> Obtener()
+	   public IEnumerable<Pelicula> Obtener(int id = -1)
 		{
-			return null;
+			List<Pelicula> UltimasPeliculas = new List<Pelicula>();
+			if (Data.Instance.PilaPelicula.Count > 10)
+			{
+				for (int i = 0; i < 10; i++)
+				{
+					UltimasPeliculas.Add(Data.Instance.PilaPelicula.Peek());
+				}
+			}
+			else
+			{
+				for (int i = 0; i < Data.Instance.PilaPelicula.Count; i++)
+				{
+					UltimasPeliculas.Add(Data.Instance.PilaPelicula.Peek());
+				}
+			}
+			return UltimasPeliculas;
 		}
 
 		[HttpPost]
