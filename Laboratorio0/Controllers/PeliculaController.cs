@@ -20,14 +20,14 @@ namespace Laboratorio0.Controllers
 			{
 				for (int i = 0; i < 10; i++)
 				{
-					UltimasPeliculas.Add(Data.Instance.PilaPelicula.Peek());
+					UltimasPeliculas.Add(Data.Instance.PilaPelicula.Pop());
 				}
 			}
 			else
 			{
 				for (int i = 0; i < Data.Instance.PilaPelicula.Count; i++)
 				{
-					UltimasPeliculas.Add(Data.Instance.PilaPelicula.Peek());
+					UltimasPeliculas.Add(Data.Instance.PilaPelicula.Pop());
 				}
 			}
 			return UltimasPeliculas;
